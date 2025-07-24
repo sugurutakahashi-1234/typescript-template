@@ -113,7 +113,7 @@
   "dependencyDashboard": true,
   "dependencyDashboardTitle": "[Renovate] Dependency Update Dashboard",
   "dependencyDashboardHeader": "This issue is automatically created by Renovate to track the status of all dependency updates. Check the status of each PR and merge as needed.",
-  "dependencyDashboardFooter": "For more details, see [renovate.json5](https://github.com/sugurutakahashi-1234/ai-chat-md-export/blob/main/renovate.json5).",
+  "dependencyDashboardFooter": "For more details, see the renovate.json5 file in this repository.",
   "dependencyDashboardLabels": [],
   
   // Ignore dependencies

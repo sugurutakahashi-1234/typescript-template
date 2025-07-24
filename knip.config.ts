@@ -3,8 +3,7 @@ import type { KnipConfig } from "knip";
 const config: KnipConfig = {
   entry: [],
   project: ["src/**/*.ts"],
-  ignore: [
-  ],
+  ignore: [],
   ignoreDependencies: ["tslib", "@commitlint/cli"], // tslib is a runtime dependency, @commitlint/cli is used in CI only
   ignoreBinaries: ["du", "awk", "sed"], // du,awk,sed: deps:size script
   ignoreExportsUsedInFile: false,
