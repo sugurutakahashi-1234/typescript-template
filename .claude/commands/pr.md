@@ -2,33 +2,47 @@
 allowed-tools:
   - Bash
   - TodoWrite
-description: Create a complete PR workflow (add, commit, push, PR)
-argument-hint: "<commit message>"
+description: 完全なPRワークフローを実行（add, commit, push, PR作成）
+argument-hint: "<コミットメッセージ>"
 ---
 
-# Create Pull Request Workflow
+# プルリクエスト作成ワークフロー
 
-I'll help you create a pull request with the commit message: $ARGUMENTS
+指定されたコミットメッセージでプルリクエストを作成します: $ARGUMENTS
 
-First, let me use TodoWrite to track the workflow steps:
-1. Check git status
-2. Stage all changes
-3. Create commit with message
-4. Push to remote
-5. Create pull request
+まず、TodoWriteを使用してワークフローの手順を追跡します:
+1. git status の確認
+2. すべての変更をステージング
+3. メッセージ付きでコミット作成
+4. リモートにプッシュ
+5. プルリクエスト作成
 
-Then execute each step:
+各手順の実行:
 
-1. First, check the current git status to see what files have changed
-2. Stage all changes using git add
-3. Commit with the provided message (or generate one if not provided)
-4. Push the current branch to remote (creating upstream if needed)
-5. Create a pull request using gh CLI
+1. まず、現在のgit statusを確認して、変更されたファイルを確認
+2. git add を使用してすべての変更をステージング
+3. 指定されたメッセージでコミット（未指定の場合は自動生成）
+4. 現在のブランチをリモートにプッシュ（必要に応じてupstreamを作成）
+5. gh CLIを使用してプルリクエストを作成
 
-Important:
-- If no commit message is provided in $ARGUMENTS, analyze the changes and generate an appropriate commit message
-- Ensure the commit message includes the Claude Code attribution footer
-- Handle any pre-commit hooks that might modify files
-- Create a meaningful PR title and description based on the changes
+重要事項:
+- $ARGUMENTS にコミットメッセージが指定されていない場合、変更内容を分析して適切なコミットメッセージを生成
+- コミットメッセージにClaude Codeの帰属フッターを含める
+- ファイルを変更する可能性のあるpre-commitフックを処理
+- 変更内容に基づいて意味のあるPRタイトルと説明を作成
 
-Let's start the workflow!
+## PRタイトルの規則
+
+PRタイトルもコミットメッセージと同様に Conventional Commits 形式に従います：
+
+**形式**: `<type>(<scope>): <subject>`
+
+**例**:
+- `feat: add user authentication system`
+- `fix(auth): resolve JWT token expiration issue`
+- `docs: update API documentation`
+- `refactor(core): simplify error handling logic`
+
+PRタイトルは最初のコミットメッセージと同じか、複数のコミットがある場合は変更内容を要約した形式にします。
+
+ワークフローを開始します！

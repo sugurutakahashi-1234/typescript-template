@@ -2,24 +2,52 @@
 allowed-tools:
   - Bash
   - TodoWrite
-description: Stage and commit changes with a message
-argument-hint: "<commit message>"
+description: 変更をステージングしてコミットする
+argument-hint: "<コミットメッセージ>"
 ---
 
-# Commit Changes
+# 変更をコミット
 
-I'll help you commit your changes with the message: $ARGUMENTS
+指定されたメッセージで変更をコミットします: $ARGUMENTS
 
-Let me track the steps:
-1. Check git status to see what files have changed
-2. Stage all changes using git add
-3. Create commit with the provided message
+実行手順を追跡します:
+1. git status で変更されたファイルを確認
+2. git add ですべての変更をステージング
+3. 指定されたメッセージでコミットを作成
 
-Process:
+処理内容:
 
-1. First, run git status to see all untracked and modified files
-2. Stage all changes with git add -A
-3. If no commit message is provided in $ARGUMENTS, analyze the changes to generate an appropriate commit message
-4. Create the commit with the Claude Code attribution footer
+1. まず git status を実行して、未追跡ファイルと変更されたファイルをすべて確認
+2. git add -A ですべての変更をステージング
+3. $ARGUMENTS にコミットメッセージが指定されていない場合、変更内容を分析して適切なコミットメッセージを生成
+4. Claude Code の帰属フッターを含めてコミットを作成
 
-Note: This command only stages and commits. It does not push to remote or create a PR.
+## コミットメッセージの規則
+
+このプロジェクトは Conventional Commits 形式に従います：
+
+**形式**: `<type>(<scope>): <subject>`
+
+**タイプ**:
+- feat: 新機能
+- fix: バグ修正
+- docs: ドキュメントのみの変更
+- style: コードの意味に影響しない変更（空白、フォーマット、セミコロンなど）
+- refactor: バグ修正や機能追加ではないコード変更
+- perf: パフォーマンス改善
+- test: テストの追加や修正
+- build: ビルドシステムや外部依存関係に影響する変更
+- ci: CI設定ファイルやスクリプトの変更
+- chore: その他の変更（ビルドプロセスやツールの変更など）
+
+**ルール**:
+- subject は最小5文字、最大72文字
+- body の行長制限なし（詳細な説明が可能）
+- WIP、TODO、Merge、Revert、Initial commit は除外
+
+**例**:
+- `feat: add user authentication`
+- `fix(auth): resolve login timeout issue`
+- `docs: update README with installation instructions`
+
+注意: このコマンドはステージングとコミットのみ行います。リモートへのプッシュやPR作成は行いません。
