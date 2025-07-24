@@ -1,5 +1,5 @@
 import { describe, expect, it } from "bun:test";
-import { add, divide, multiply, subtract } from "./calculator.js";
+import { add, divide, multiply, subtract } from "./example.js";
 
 describe("Calculator", () => {
   describe("add", () => {

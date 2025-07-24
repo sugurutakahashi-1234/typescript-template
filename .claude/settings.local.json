@@ -129,7 +129,6 @@
       "Bash(git log:*)",
       "Bash(./node_modules/.bin/tsc)",
       "WebFetch(domain:zod.dev)",
-      "Bash(ai-chat-md-export:*)",
       "Bash(jq:*)",
       "WebFetch(domain:bundlephobia.com)",
       "Bash(npm search:*)",

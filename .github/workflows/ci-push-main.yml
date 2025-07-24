@@ -38,3 +38,15 @@ jobs:
 
       - name: Test
         run: bun run test:coverage
+
+      - name: Upload coverage to Codecov
+        if: github.actor != 'github-actions[bot]'
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}     # Required for private repos
+          files: ./coverage/lcov.info             # Path to coverage report
+          verbose: true                           # Enable verbose logging for debugging
+          fail_ci_if_error: false                 # Don't fail CI if upload fails
+          flags: unittests                        # Tag coverage as unit tests
+          disable_search: false                   # Enable automatic coverage file search
+          report_type: coverage                   # Specify coverage report type
