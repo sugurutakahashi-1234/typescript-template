@@ -3,10 +3,10 @@ bunx --no-install commitlint --edit $1 --config commitlint.config.ts
 
 # Check layers.md changes
 TARGET='docs/reports/dependencies/layers.md'
-TOKEN='[deps-change]'
+TOKEN='\[deps-change\]'
 
 if git diff --cached --name-only | grep -qx "$TARGET"; then
-  if ! grep -q "\[deps-change\]" "$1"; then
+  if ! grep -q "$TOKEN" "$1"; then
     printf '\n❌ Dependency graph changed\n\n'
     printf 'File %s has been modified.\n' "$TARGET"
     printf 'This may indicate:\n'
