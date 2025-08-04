@@ -1,6 +1,33 @@
 {
   "name": "typescript-template",
   "version": "0.1.0",
+  "description": "typescript-template",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bin": {
+    "typescript-template": "./bin/typescript-template.js"
+  },
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "keywords": [],
+  "author": "Suguru Takahashi",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sugurutakahashi-1234/typescript-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sugurutakahashi-1234/typescript-template/issues"
+  },
+  "homepage": "https://github.com/sugurutakahashi-1234/typescript-template#readme",
+  "files": [
+    "dist",
+    "bin",
+    "README.md",
+    "LICENSE"
+  ],
   "type": "module",
   "engines": {
     "node": ">=20.0.0"

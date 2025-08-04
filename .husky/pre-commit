@@ -22,7 +22,7 @@ if git diff --cached --name-only | grep -q "^renovate.json5$"; then
 fi
 
 # Auto-update dependency graph
-# if git diff --cached --name-only | grep -qE "^src/.*\.ts$"; then
-#   bun run update:docs
-#   git add docs/reports/
-# fi
+if git diff --cached --name-only | grep -qE "^src/.*\.ts$"; then
+  bun run update:docs
+  git add docs/reports/
+fi
