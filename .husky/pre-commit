@@ -6,6 +6,11 @@ bun run format
 bun run lint:check && git diff --exit-code
 bun run format:check && git diff --exit-code
 
+# Validate schema if changed
+# if git diff --cached --name-only | grep -q "^schema/config.schema.json$"; then
+#   bun run validate:schema
+# fi
+
 # Validate codecov.yml if changed
 if git diff --cached --name-only | grep -q "^codecov.yml$"; then
   bun run validate:codecov
@@ -17,7 +22,7 @@ if git diff --cached --name-only | grep -q "^renovate.json5$"; then
 fi
 
 # Auto-update dependency graph
-if git diff --cached --name-only | grep -qE "^src/.*\.ts$"; then
-  bun run update:docs
-  git add docs/reports/
-fi
+# if git diff --cached --name-only | grep -qE "^src/.*\.ts$"; then
+#   bun run update:docs
+#   git add docs/reports/
+# fi

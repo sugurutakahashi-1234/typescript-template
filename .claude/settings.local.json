@@ -139,7 +139,15 @@
       "WebFetch(domain:help.openai.com)",
       "WebFetch(domain:support.anthropic.com)",
       "WebFetch(domain:docs.renovatebot.com)",
-      "WebFetch(domain:nodejs.org)"
+      "WebFetch(domain:nodejs.org)",
+      "WebFetch(domain:valibot.dev)",
+      "Bash(mermaid-markdown-wrap:*)",
+      "Bash(./dist/mmw:*)",
+      "WebFetch(domain:api.github.com)",
+      "Bash(tar:*)",
+      "Bash(git cherry-pick:*)",
+      "Bash(act:*)",
+      "Bash(../dist/presentation/cli.js init --yes)"
     ],
     "deny": []
   },
