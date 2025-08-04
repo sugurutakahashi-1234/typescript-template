@@ -33,7 +33,6 @@
         "**/coverage/**",
         "**/sandbox/**",
         "**/dist/**",
-        "**/lib/**",
         "**/node_modules/**",
         "**/.claude/settings.local.json"
       ],
