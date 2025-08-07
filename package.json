@@ -78,7 +78,7 @@
     "@ysk8hori/typescript-graph": "^0.26.4",
     "husky": "^9.1.7",
     "knip": "^5.62.0",
-    "readme-i18n-sentinel": "^1.0.0",
+    "readme-i18n-sentinel": "^1.1.0",
     "typescript": "^5.9.2"
   }
 }
